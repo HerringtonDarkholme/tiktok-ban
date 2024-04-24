@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style media="screen"></style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no  viewport-fit=cover"/> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>TikTok Ban Countdown</title>
+    <meta name="keywords" content="TikTok Ban Count Down">
+    <meta name="description" id="sharedsc" content="TikTok Count Down! How many days are left until TikTok's actual ban?">
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="logo">
+        <a href="/">
+          <h1 class="title">
+            <span style="height: 1em;display:inline-block;overflow:hidden;">
+            <svg style="margin-top: -34px;" xmlns="http://www.w3.org/2000/svg" height="2em" fill="currentColor" alt="TikTok"><use xlink:href="#logo-dark-c4561408"></use></svg>
+            </span>
+            B<span style="color:rgb(254, 44, 85)">a</span>n Cl<span style="color:#20D5EC">o</span>ck</h1>
+        </a>
+      </div>
+
+      <div id="container">
+        <h2 id="uctext">TikTok will banned in...</h2>
+        <ul id="lsn">
+          <li id="uccounter">
+            <div id="clock">
+              <div class="one-watch">
+                <div id="d100" class="num">
+                  <div class="upper"></div>
+                  <div class="base upper"></div>
+                  <div class="base lower"></div>
+                  <div class="lower"></div>
+                </div>
+                <div id="d10" class="num">
+                  <div class="upper"></div>
+                  <div class="base upper"></div>
+                  <div class="base lower"></div>
+                  <div class="lower"></div>
+                </div>
+                <div id="d0" class="num">
+                  <div class="upper"></div>
+                  <div class="base upper"></div>
+                  <div class="base lower"></div>
+                  <div class="lower"></div>
+                </div>
+                <br/>
+                <div class="colon">Days</div>
+              </div>
+
+              <div class="one-watch">
+                <div id="h10" class="num">
+                  <div class="upper"></div>
+                  <div class="base upper"></div>
+                  <div class="base lower"></div>
+                  <div class="lower"></div>
+                </div>
+
+                <div id="h0" class="num">
+                  <div class="upper"></div>
+                  <div class="base upper"></div>
+                  <div class="base lower"></div>
+                  <div class="lower"></div>
+                </div>
+                <br/>
+                <div class="colon">Hours</div>
+              </div>
+
+              <div class="one-watch">
+                <div id="m10" class="num">
+                  <div class="upper"></div>
+                  <div class="base upper"></div>
+                  <div class="base lower"></div>
+                  <div class="lower"></div>
+                </div>
+
+                <div id="m0" class="num">
+                  <div class="upper"></div>
+                  <div class="base upper"></div>
+                  <div class="base lower"></div>
+                  <div class="lower"></div>
+                </div>
+                <br/>
+                <div class="colon">Minutes</div>
+              </div>
+
+              <div class="one-watch">
+                <div id="s10" class="num">
+                  <div class="upper"></div>
+                  <div class="base upper"></div>
+                  <div class="base lower"></div>
+                  <div class="lower"></div>
+                </div>
+
+                <div id="s0" class="num">
+                  <div class="upper"></div>
+                  <div class="base upper"></div>
+                  <div class="base lower"></div>
+                  <div class="lower"></div>
+                </div>
+                <br/>
+                <div class="colon">Seconds</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <p class="description">
+The TikTok ban bill, recently <a href="https://www.msn.com/en-us/money/savingandinvesting/the-house-just-passed-the-tiktok-ban-here-s-what-that-means-for-meta-stock/ar-AA1nx9vW">passed by the US House of Representatives</a>, could lead to a nationwide ban on the app. The legislation requires ByteDance, TikTok's Chinese parent company, to divest its stake in the app within nine months or face a ban from US app stores and web hosting platforms. The bill is part of a broader concern over national security, as it is feared that the Chinese government could access user data or push propaganda through TikTok. While the bill has been <a href="https://www.the-star.co.ke/news/world/2024-04-24-us-senate-passes-bill-that-could-see-tiktok-banned/">approved by the Senate</a>, it faces potential <a href="https://www.nbcnews.com/business/tiktok-ban-bill-why-congress-when-takes-effect-rcna148981">legal challenges</a> that could delay its implementation.
+
+      </p>
+
+    <script src="/tween.js"></script>
+
+    <script>
+      // set 3d transforms
+      TweenMax.set(".upper", {rotationX:0.01, transformOrigin:"50% 100%"})
+      TweenMax.set(".lower", {rotationX:0.01, transformOrigin:"50% 0%"})
+
+      // set clock
+      var t, dd,ss, mm, hh;
+      setTimeVars();
+      function setTimeVars(){
+        var EndTime= new Date("2025/01/19 09:00:00"); //截止时间
+        var NowTime = new Date();
+        t =EndTime.getTime() - NowTime.getTime();
+        if(t<=0){
+          t = 0
+        }
+
+        dd=String(Math.floor(t/1000/60/60/24));
+        hh=String(Math.floor(t/1000/60/60%24));
+        mm=String(Math.floor(t/1000/60%60));
+        ss=String(Math.floor(t/1000%60));
+
+
+        if (dd.length==1) dd = '00'+dd;
+        if (dd.length==2) dd = '0'+dd;
+        if (ss.length==1) ss = "0"+ss;
+        if (mm.length==1) mm = "0"+mm;
+        if (hh.length==1) hh = "0"+hh;
+      }
+      d100.childNodes[3].innerHTML = d100.childNodes[7].innerHTML = "<span>"+Number(dd.substr(0,1))+"</span>";
+      d10.childNodes[3].innerHTML = d10.childNodes[7].innerHTML = "<span>"+Number(String(dd).substr(1,1))+"</span>";
+      d0.childNodes[3].innerHTML = d0.childNodes[7].innerHTML = "<span>"+Number(String(dd).substr(2,1))+"</span>";
+
+      h10.childNodes[3].innerHTML = h10.childNodes[7].innerHTML = "<span>"+Number(hh.substr(0,1))+"</span>";
+      h0.childNodes[3].innerHTML = h0.childNodes[7].innerHTML = "<span>"+Number(String(hh).substr(1,1))+"</span>";
+
+      m10.childNodes[3].innerHTML = m10.childNodes[7].innerHTML = "<span>"+Number(mm.substr(0,1))+"</span>";
+      m0.childNodes[3].innerHTML = m0.childNodes[7].innerHTML = "<span>"+Number(mm.substr(1,1))+"</span>";
+
+      s10.childNodes[3].innerHTML = s10.childNodes[7].innerHTML = "<span>"+Number(ss.substr(0,1))+"</span>";
+      s0.childNodes[3].innerHTML = s0.childNodes[7].innerHTML = "<span>"+Number(ss.substr(1,1))+"</span>";
+
+
+      // start ticking
+      var interval = setInterval(function(){
+        setTimeVars();
+        if(t == 0){
+          clearInterval(interval);
+          return
+        }
+
+        tick(s0, Number(ss.substr(1,1)) )
+        if (ss.substr(1,1)=="9"){
+          tick(s10, Number(ss.substr(0,1)) )
+          if (ss=="59"){
+            tick(s10, 5, true)
+            tick(m0, Number(mm.substr(1,1)))
+            if (mm.substr(1,1)=="9"){
+              tick(m10, Number(mm.substr(0,1)))
+              if (mm=="59") {
+                tick(m10, 5, true)
+                tick(h0, Number(hh.substr(1,1)))
+                if (hh.substr(1,1)=="9") tick(h10, Number(hh.substr(0,1)))
+                if (hh=="23") {
+                  tick(h0, Number(hh.substr(0,1)), true)
+                  tick(h10, Number(hh.substr(1,1)), true)
+                  tick(d0, Number(dd.substr(2,1)))
+                  if(dd.substr(2,1)=="9"){
+                    tick(d10, Number(dd.substr(1,1)))
+                    if(dd.substr(1,1)=="9"){
+                      tick(d100, Number(dd.substr(0,1)))
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      }, 1000)
+
+      function tick(mc,i, toZero=false){
+        // set numbers
+        mc.childNodes[1].innerHTML = "<span>"+i+"</span>"; //start upper
+        mc.childNodes[7].innerHTML = "<span>"+i+"</span>"; //start lower
+        if ( i==9 || toZero ) i=-1;
+        mc.childNodes[3].innerHTML = "<span>"+(i+1)+"</span>"; //end upper
+        mc.childNodes[5].innerHTML = "<span>"+(i+1)+"</span>"; //end lower
+        // animate tick
+        TweenMax.fromTo(mc.childNodes[1], .3, {alpha:0},{alpha:1, ease:Power4.easeIn})
+        TweenMax.fromTo(mc.childNodes[3], .3, {rotationX:0},{rotationX:-90, ease:Power1.easeIn})
+        TweenMax.fromTo(mc.childNodes[7], .5+.2*Math.random(), {rotationX:90},{rotationX:0, ease:Bounce.easeOut, delay:.3})
+        TweenMax.fromTo(mc.childNodes[5], .6, {alpha:1},{alpha:0, ease:Bounce.easeOut, delay:.3})
+      }
+
+      window.unload = function(){
+        if(interval){
+          clearInterval(interval);
+        }
+      }
+
+
+    </script>
+    <script type="module" src="./src/main.ts"></script>
+    <svg style="position:absolute;width:0;height:0" id="svg-sprite-container"><symbol data-count="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 42" id="logo-dark-c4561408"><path fill="#25F4EE" d="M9.875 16.842v-1.119A9 9 0 0 0 8.7 15.64c-4.797-.006-8.7 3.9-8.7 8.708a8.7 8.7 0 0 0 3.718 7.134A8.68 8.68 0 0 1 1.38 25.55c0-4.737 3.794-8.598 8.495-8.707" /><path fill="#25F4EE" d="M10.086 29.526c2.14 0 3.89-1.707 3.967-3.83l.006-18.968h3.463a7 7 0 0 1-.11-1.202h-4.726l-.006 18.969a3.98 3.98 0 0 1-3.967 3.829 3.9 3.9 0 0 1-1.846-.46 3.95 3.95 0 0 0 3.22 1.662m13.905-16.36v-1.055a6.5 6.5 0 0 1-3.583-1.068 6.57 6.57 0 0 0 3.583 2.123" /><path fill="#FE2C55" d="M20.409 11.044a6.54 6.54 0 0 1-1.616-4.316h-1.265a6.56 6.56 0 0 0 2.88 4.316M8.706 20.365a3.98 3.98 0 0 0-3.973 3.976c0 1.528.869 2.858 2.134 3.523a3.94 3.94 0 0 1-.754-2.321 3.98 3.98 0 0 1 3.973-3.976c.409 0 .805.07 1.175.185v-4.833a9 9 0 0 0-1.175-.083c-.07 0-.134.006-.204.006v3.708a4 4 0 0 0-1.176-.185" /><path fill="#FE2C55" d="M23.992 13.166v3.676c-2.453 0-4.727-.786-6.58-2.116v9.622c0 4.8-3.902 8.713-8.706 8.713a8.67 8.67 0 0 1-4.988-1.579 8.7 8.7 0 0 0 6.368 2.781c4.797 0 8.707-3.906 8.707-8.714v-9.621a11.25 11.25 0 0 0 6.579 2.116v-4.73q-.72-.002-1.38-.148" /><path fill="black" d="M17.413 24.348v-9.622a11.25 11.25 0 0 0 6.58 2.116v-3.676a6.57 6.57 0 0 1-3.584-2.123 6.6 6.6 0 0 1-2.888-4.315H14.06l-.006 18.968a3.98 3.98 0 0 1-3.967 3.83A3.99 3.99 0 0 1 6.86 27.87a3.99 3.99 0 0 1-2.133-3.523A3.98 3.98 0 0 1 8.7 20.372c.409 0 .805.07 1.175.185v-3.708c-4.701.103-8.495 3.964-8.495 8.701 0 2.29.888 4.373 2.338 5.933a8.67 8.67 0 0 0 4.988 1.58c4.798 0 8.707-3.913 8.707-8.714m12.635-11.17h14.775l-1.355 4.232h-3.832v15.644h-4.778V17.41l-4.804.006zm38.984 0h15.12l-1.355 4.232h-4.17v15.644h-4.785V17.41l-4.804.006zM45.73 19.502h4.733v13.553h-4.708zm6.617-6.374h4.733v9.257l4.689-4.61h5.646l-5.934 5.76 6.644 9.52h-5.213l-4.433-6.598-1.405 1.362v5.236H52.34V13.128zm50.143 0h4.734v9.257l4.688-4.61h5.647l-5.934 5.76 6.643 9.52h-5.206l-4.433-6.598-1.405 1.362v5.236h-4.734zm-54.397 4.826a2.384 2.384 0 0 0 2.382-2.384 2.384 2.384 0 1 0-2.382 2.384" /><path fill="#25F4EE" d="M83.545 24.942a8.11 8.11 0 0 1 7.473-8.087 9 9 0 0 0-.709-.026c-4.478 0-8.106 3.631-8.106 8.113s3.628 8.113 8.106 8.113c.21 0 .498-.013.71-.026-4.178-.326-7.475-3.823-7.475-8.087" /><path fill="#FE2C55" d="M92.858 16.83c-.217 0-.505.012-.716.025a8.11 8.11 0 0 1 7.468 8.087 8.11 8.11 0 0 1-7.468 8.087c.211.02.499.026.716.026 4.478 0 8.106-3.631 8.106-8.113s-3.628-8.113-8.106-8.113" /><path fill="black" d="M91.58 28.887a3.94 3.94 0 0 1-3.94-3.945 3.94 3.94 0 1 1 7.882 0c0 2.18-1.77 3.945-3.942 3.945m0-12.058c-4.477 0-8.106 3.631-8.106 8.113s3.629 8.113 8.106 8.113 8.106-3.631 8.106-8.113-3.628-8.113-8.106-8.113" /></symbol></svg>
+  </body>
+</html>
